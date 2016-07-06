@@ -47,8 +47,8 @@
 #include "cpuinfo.h"
 
 #define CFGFILENAME "/etc/snesdev.cfg"
-#define BUTTONPIN     RPI_GPIO_P1_31
-#define BUTTONPIN_V2  RPI_V2_GPIO_P1_31
+#define BUTTONPIN     6
+#define BUTTONPIN_V2  6
 
 /* time to wait after each cycle */
 #define GPADSNUM 2 /* number of game pads to poll */
@@ -181,14 +181,14 @@ int main(int argc, char *argv[]) {
 		printf("[SNESDev-Rpi] Using pin setup for RetroPie GPIO-Adapter Version 2.X\n");
 
 	} else if (strcmp(confres.adapter_version,"3x")==0) {
-		clockpin = RPI_BPLUS_GPIO_J8_36;
-		strobepin = RPI_BPLUS_GPIO_J8_38;
-		data1pin = RPI_BPLUS_GPIO_J8_35;
-		data2pin = RPI_BPLUS_GPIO_J8_33;
-		clockpin_v2 = RPI_V2_GPIO_P1_36;
-		strobepin_v2 = RPI_V2_GPIO_P1_38;
-		data1pin_v2 = RPI_V2_GPIO_P1_35;
-		data2pin_v2 = RPI_V2_GPIO_P1_33;
+		clockpin = 16;
+		strobepin = 20;
+		data1pin = 19;
+		data2pin = 13;
+		clockpin_v2 = 16;
+		strobepin_v2 = 20;
+		data1pin_v2 = 19;
+		data2pin_v2 = 13;
 		printf("[SNESDev-Rpi] Using pin setup for RetroPie GPIO-Adapter Version 3.X\n");
 	} 
 	else {
